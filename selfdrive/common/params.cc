@@ -297,6 +297,7 @@ std::unordered_map<std::string, uint32_t> keys = {
     { "ApplyDynamicTFollowApart", PERSISTENT },
     { "ApplyDynamicTFollowDecel", PERSISTENT },
     { "SccConnectedBus2", PERSISTENT },
+    { "MdpsConnectedBus1", PERSISTENT },
     { "TFollowRatio", PERSISTENT },
     { "JerkUpperLowerLimit", PERSISTENT },
     { "OPKRTimeZone", PERSISTENT},

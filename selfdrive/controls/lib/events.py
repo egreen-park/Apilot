@@ -671,6 +671,11 @@ EVENTS: Dict[int, Dict[str, Union[Alert, AlertCallbackType]]] = {
     ET.NO_ENTRY: NoEntryAlert("Steering Temporarily Unavailable"),
   },
 
+  EventName.steerTimeLimit: {
+    ET.SOFT_DISABLE: soft_disable_alert("Vehicle Steering Time Limit"),
+    ET.NO_ENTRY: NoEntryAlert("Vehicle Steering Time Limit"),
+  },
+
   EventName.outOfSpace: {
     ET.PERMANENT: out_of_space_alert,
     ET.NO_ENTRY: NoEntryAlert("Out of Storage"),
@@ -744,8 +749,8 @@ EVENTS: Dict[int, Dict[str, Union[Alert, AlertCallbackType]]] = {
   },
 
   EventName.espDisabled: {
-    ET.SOFT_DISABLE: soft_disable_alert("ESP Off"),
-    ET.NO_ENTRY: NoEntryAlert("ESP Off"),
+    ET.SOFT_DISABLE: soft_disable_alert("Electronic Stability Control Disabled"),
+    ET.NO_ENTRY: NoEntryAlert("Electronic Stability Control Disabled"),
   },
 
   EventName.lowBattery: {
@@ -821,13 +826,9 @@ EVENTS: Dict[int, Dict[str, Union[Alert, AlertCallbackType]]] = {
   },
 
   EventName.accFaulted: {
-    ET.IMMEDIATE_DISABLE: ImmediateDisableAlert("Cruise Faulted"),
-    ET.PERMANENT: NormalPermanentAlert("Cruise Faulted", ""),
-    ET.NO_ENTRY: NoEntryAlert("Cruise Faulted"),
-  },
-
-  EventName.accFaultedTemp: {
-    ET.NO_ENTRY: NoEntryAlert("Cruise Temporarily Faulted"),
+    ET.IMMEDIATE_DISABLE: ImmediateDisableAlert("Cruise Fault: Restart the Car"),
+    ET.PERMANENT: NormalPermanentAlert("Cruise Fault: Restart the car to engage"),
+    ET.NO_ENTRY: NoEntryAlert("Cruise Fault: Restart the Car"),
   },
 
   EventName.controlsMismatch: {
